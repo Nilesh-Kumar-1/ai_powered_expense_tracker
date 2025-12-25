@@ -21,7 +21,7 @@ Expense - `POST /expenses`, `GET /expenses`, `PUT /expenses/{id}`, `DELETE /expe
 Users - `POST /users`, `GET /users `, `PUT /users/id`, `DELETE users/id`
 
 
-**Phase 1 – Core Backend Foundation**
+**Phase 1 – Core Backend Foundation(In Progress)**
 
 **Goal:** Build a production‑ready FastAPI backend with clean architecture.
 
