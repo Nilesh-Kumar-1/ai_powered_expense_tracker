@@ -21,7 +21,7 @@ Expense - `POST /expenses`, `GET /expenses`, `PUT /expenses/{id}`, `DELETE /expe
 Users - `POST /users`, `GET /users `, `PUT /users/id`, `DELETE users/id`
 
 
-**Phase 1 – Core Backend Foundation(In Progress)**
+## **Phase 1 – Core Backend Foundation(In Progress)**
 
 **Goal:** Build a production‑ready FastAPI backend with clean architecture.
 
@@ -50,7 +50,7 @@ Users - `POST /users`, `GET /users `, `PUT /users/id`, `DELETE users/id`
 - Secrets in **Azure Key Vault**.
 - CI/CD with GitHub Actions.
 
-**Phase 2 – Document Intelligence Integration**
+## **Phase 2 – Document Intelligence Integration**
 
 **Goal:** Automate ingestion of bank statements (PDF → structured expenses).
 
@@ -71,7 +71,7 @@ Users - `POST /users`, `GET /users `, `PUT /users/id`, `DELETE users/id`
 - Deduplicate transactions.
 - Update status (`Received → Processing → Completed`).
 
-**Phase 3 – RAG Pipeline with Azure AI**
+ ## **Phase 3 – RAG Pipeline with Azure AI**
 
 **Goal:** Enable natural language queries and insights over expenses.
 
@@ -95,7 +95,7 @@ Users - `POST /users`, `GET /users `, `PUT /users/id`, `DELETE users/id`
 - Cache frequent queries.
 - Monitor token usage and latency.
 
-**Phase 4 – Enterprise Security (Future)**
+## **Phase 4 – Enterprise Security (Future)**
 
 **Goal:** Replace JWT with **Microsoft Entra ID**.
 
