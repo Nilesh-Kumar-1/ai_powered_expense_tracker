@@ -3,6 +3,24 @@ This repo will contain backend code for ai_powered_expense_tracker application. 
 
 # Roadmap: Expense Tracker Backend (Azure‑Native)
 
+Problem Statement
+
+Users log in via Entra ID authentication (OAuth2/OpenID Connect). Each user can upload their bank statement (CSV, PDF, Excel) to an Azure Storage Account. An Azure Function is triggered to parse and validate transactions, then store them in a PostgreSQL database.
+Expenses follow an approval workflow with states: Received → Processing → Completed. Users can mark expenses as Approved, Rejected, or leave them In Progress. Rejected expenses may be resubmitted.
+Each user’s expenses are isolated (row-level security) so no other user can access them. Users can assign custom labels in addition to built-in categories (Food, Travel, Rent, etc.).
+A chat interface allows users to query their expenses (e.g., “Show my approved expenses for December”) or interact with expense records.
+Tables:
+- Users: Username, Email, First Name, Last Name, PK
+- Expenses: Expense Name, Transaction Type (Bank Transfer, Cash), From, To, State, Label, Description, PK, FK(User)
+- Labels: PK, FK(User), Label Name
+Security includes encryption at rest and in transit, and scalability is supported via Azure monitoring and retry policies.
+
+API's
+
+Expense - `POST /expenses`, `GET /expenses`, `PUT /expenses/{id}`, `DELETE /expenses/{id}`
+Users - `POST /users`, `GET /users `, `PUT /users/id`, `DELETE users/id`
+
+
 **Phase 1 – Core Backend Foundation**
 
 **Goal:** Build a production‑ready FastAPI backend with clean architecture.
@@ -25,7 +43,7 @@ This repo will contain backend code for ai_powered_expense_tracker application. 
     - Async everywhere (`async def`).
     - Dependency injection with `Depends`.
     - Logging middleware (structured JSON).
-    - Unit + integration tests with `pytest`.
+    - Unit + integration tests with `pytest`(At last).
 - **Deployment**
 - Containerize with Docker.
 - Deploy to **Azure App Service** or **Azure Container Apps**.
