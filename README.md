@@ -10,8 +10,8 @@ Expenses follow an approval workflow with states: Received → Processing → Co
 Each user’s expenses are isolated (row-level security) so no other user can access them. Users can assign custom labels in addition to built-in categories (Food, Travel, Rent, etc.).
 A chat interface allows users to query their expenses (e.g., “Show my approved expenses for December”) or interact with expense records.
 Tables:
-- Users: Username, Email, First Name, Last Name, PK
-- Expenses: Expense Name, Transaction Type (Bank Transfer, Cash), From, To, State, Label, Description, PK, FK(User)
+- Users: Username, Email, First Name, Last Name, PK, is_active
+- Expenses: Expense Name, Transaction Type (Bank Transfer, Cash), From, To, State, Label, Description, PK, FK(User), date
 - Labels: PK, FK(User), Label Name
 Security includes encryption at rest and in transit, and scalability is supported via Azure monitoring and retry policies.
 
